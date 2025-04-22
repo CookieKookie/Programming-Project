@@ -9,15 +9,20 @@ public class QuizApplication
 {
 	public static void main(String[] args)
 	{
-	    Scanner in = new Scanner(System.in);
-		Quiz quiz = new Quiz();
-        
+	Scanner in = new Scanner(System.in);
+	Quiz quiz = new Quiz();
+        String questionOwner = "";
+		
         String topic = "";
-        
-        System.out.println("Do you want to enter your own questions or use ours? (Enter 'mine' or 'ours')");
-        String questionOwner = in.next();
-        if (questionOwner.equalsIgnoreCase("mine"))
-        {
+        While(true){ 
+		System.out.println("Do you want to enter your own questions or use ours? (Enter 'mine' or 'ours')");
+        	questionOwner = in.next().trim().toLowerCase();
+		if (questionOwner.equals("mine") || questionOwner.equals("ours")){
+			break;
+		} else { 
+			System.out.println("Please enter mine or ours");
+		}
+	if (questionOwner.equalsIgnoreCase("mine")){
             boolean valid = false;
         
             int numQuestions = 0;
