@@ -13,9 +13,15 @@ public class QuizApplication
 		Quiz quiz = new Quiz();
         
         String topic = "";
-        
-        System.out.println("Do you want to enter your own questions or use ours? (Enter 'mine' or 'ours')");
-        String questionOwner = in.next();
+        String questionOwner = "":
+	while(true){
+		System.out.println("Do you want to enter your own questions or use ours? (Enter 'mine' or 'ours')");
+        	questionOwner = in.next().trim().toLowerCase();
+		if (questionOwner.equals("mine"))||(questionOwner.qeuals("our")){
+			break;
+		} else { 
+			System.out.println("'mine' or 'ours');
+		}
         if (questionOwner.equalsIgnoreCase("mine"))
         {
             boolean valid = false;
